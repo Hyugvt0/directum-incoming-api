@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "subject",
+    "documentKind",
+    "sender",
+    "receivedDate"
+  ],
+  "properties": {
+    "subject": {
+      "type": "string"
+    },
+    "documentKind": {
+      "type": "string"
+    },
+    "sender": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        }
+      }
+    },
+    "receivedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "fileName",
+          "contentPDF"
+        ],
+        "properties": {
+          "fileName": {
+            "type": "string"
+          },
+          "contentPDF": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "register": {
+      "type": "string"
+    },
+    "responsible": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

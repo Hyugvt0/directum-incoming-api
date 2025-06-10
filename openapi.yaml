@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: Directum RX Incoming Correspondence API
+  version: 1.0.0
+paths:
+  /api/documents/incoming:
+    post:
+      summary: Создание входящего документа
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/incoming-document.schema.json'
+      responses:
+        '201':
+          description: Документ создан
+        '400':
+          description: Ошибка валидации
+        '401':
+          description: Неавторизован
+        '403':
+          description: Нет прав
+        '409':
+          description: Дубликат
+  /api/documents/incoming/{id}:
+    get:
+      summary: Получение документа по ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успешно
+        '404':
+          description: Не найден

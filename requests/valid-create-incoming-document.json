@@ -1,0 +1,17 @@
+{
+  "subject": "Письмо от клиента по договору №123",
+  "documentKind": "Входящее письмо",
+  "sender": {
+    "name": "ООО Бета",
+    "email": "contact@beta.ru"
+  },
+  "receivedDate": "2025-06-04T13:00:00",
+  "attachments": [
+    {
+      "fileName": "contract_123.pdf",
+      "contentPDF": "<base64_pdf_data>"
+    }
+  ],
+  "register": "Входящий реестр",
+  "responsible": "petrov.p"
+}
